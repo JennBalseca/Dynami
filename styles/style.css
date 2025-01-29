@@ -1,0 +1,229 @@
+/* ========== ESTILOS GENERALES ========== */
+body {
+  background-color: rgb(242, 242, 242);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(51, 51, 51);
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== HEADER RESPONSIVO ========== */
+.header {
+  background: #9ed6aa;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column; /* Mobile: elementos apilados */
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  height: 120px;
+  transition: height 0.3s;
+}
+
+.titulo h1 {
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin: 0;
+}
+
+.titulo h3 {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Mobile: menú vertical */
+  gap: 10px;
+  text-align: center;
+}
+
+.nav li {
+  margin: 0 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* ========== SECCIÓN DE FOTOS ========== */
+.fotos {
+  display: flex;
+  flex-wrap: wrap; /* Permite apilamiento */
+  gap: 10px;
+  padding: 10px;
+}
+
+.fotos img {
+  width: 100%;
+  flex: 1 1 300px; /* Flexibilidad en tamaño */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== GALERÍA DE SERVICIOS ========== */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  min-height: 250px;
+}
+
+.item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.item h2 {
+  font-size: 1.2rem;
+  padding: 15px;
+  margin: 0;
+  text-align: center;
+  white-space: normal; /* Texto multilínea */
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: #9ed6aa;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 15px;
+}
+
+.redes-sociales img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+.redes-sociales img:hover {
+  transform: scale(1.1);
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row; /* Desktop: elementos en línea */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 50px;
+  }
+
+  .logo img {
+    height: 180px;
+  }
+
+  .titulo h1 {
+    font-size: 2.5rem;
+  }
+
+  .nav ul {
+    flex-direction: row; /* Desktop: menú horizontal */
+  }
+
+  .fotos img {
+    width: calc(33.33% - 20px); /* 3 columnas */
+  }
+}
+
+@media (min-width: 1024px) {
+  .galeria {
+    gap: 30px;
+    padding: 20px 50px;
+  }
+  
+  .item h2 {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+
+/* ========== MENÚ HAMBURGUESA ========== */
+.hamburger {
+  display: none; /* Oculto en desktop */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.hamburger-line {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #000;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Estilos para móvil */
+@media (max-width: 767px) {
+  .hamburger {
+    display: block; /* Mostrar en móvil */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .nav {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .nav.active {
+    max-height: 500px; /* Altura suficiente para mostrar el menú */
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .nav li {
+    margin: 10px 0;
+  }
+
+  /* Animación hamburguesa a X */
+  .hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

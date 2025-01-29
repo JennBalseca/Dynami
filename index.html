@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#9ed6aa" />
+    <title>Apoyo Pedagógico Dýnami</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="shortcut icon" href="./media/images/logo sin fondo.png" type="image/x-icon">
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="./media/images/logo sin fondo.png" alt="Logo" />
+      </div>
+      <div class="titulo">
+        <h1>Apoyo Pedagógico Dýnami</h1>
+        <h3>Profesoras que enseñamos con el corazón</h3>
+      </div>
+
+      <!-- Botón hamburguesa -->
+      <button class="hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Menú de navegación -->
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="./pages/quienessomos.html">Quiénes Somos</a></li>
+          <li><a href="./pages/contactanos.html">Contáctanos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- tres fotos-->
+    <div class="fotos">
+      <img src="./media/images/foto.jpeg" alt="foto1" />
+      <img src="./media/images/dynamifoto.jpeg" alt="foto2" />
+      <img src="./media/images/dynamifoto2.jpeg" alt="foto3" />
+    </div>
+
+    <!--Contenido-->
+    <h2><center>¡Conoce lo que te ofrecemos!</center></h2>
+
+    <!--Contenido-->
+    <div class="galeria">
+      <div class="item">
+        <a href="./pages/apoyopedagogico.html">
+          <img
+            src="./media/images/apoyo pedagogico.jpeg"
+            alt="Apoyo Pedagógico"
+          />
+          <h2>Apoyo Pedagógico</h2>
+        </a>
+      </div>
+      <div class="item">
+        <a href="./pages/playgroupdynami.html">
+          <img src="./media/images/play group.jpeg" alt="Play Group Dýnami" />
+          <h2>Play Group Dýnami</h2>
+        </a>
+      </div>
+      <div class="item">
+        <a href="./pages/arte.html">
+          <img src="./media/images/Coverarte.jpeg" alt="Clases de Arte" />
+          <h2>Clases de Arte</h2>
+        </a>
+      </div>
+      <div class="item">
+        <a href="./pages/musicaycanto.html">
+          <img
+            src="./media/images/musica.jpeg"
+            alt="Clases de Música y Canto"
+          />
+          <h2>Clases de Música y Canto</h2>
+        </a>
+      </div>
+      <div class="item">
+        <a href="./pages/yoga.html">
+          <img src="./media/images/yoga2.jpeg" alt="Clases de Yoga" />
+          <h2>Clases de Yoga</h2>
+        </a>
+      </div>
+      <div class="item">
+        <a href="./pages/materialdidactico.html">
+          <img
+            src="./media/images/materialdidactico.jpeg"
+            alt="Material Didáctico"
+          />
+          <h2>Material Didáctico</h2>
+        </a>
+      </div>
+    </div>
+
+    <!--Footer con redes sociales-->
+
+    <footer>
+      <h3><center>¡Síguenos en nuestras redes sociales!</center></h3>
+      <div class="redes-sociales">
+        <a href="https://www.instagram.com/dynami_pedagogia/" target="_blank">
+          <img src="./media/images/instagram logo.webp" alt="Instagram" />
+        </a>
+
+        <a
+          href="https://www.facebook.com/DynamiApoyoPedagogico"
+          target="_blank"
+        >
+          <img
+            src="./media/images/facebook-logo-facebook-icon-transparent-free-png.webp"
+            alt="Facebook"
+          />
+        </a>
+        <a
+          href="https://www.youtube.com/@dynamiapoyopedagogico3935?app=desktop."
+          target="_blank"
+        >
+          <img
+            src="./media/images/youtube-logo-youtube-icon-transparent-free-png.webp"
+            alt="Youtube"
+          />
+        </a>
+      </div>
+    </footer>
+    <!-- MENU HAMBURGESA -->
+    <script>
+      // Seleccionar elementos
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector(".nav");
+
+      // Toggle menú
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // Cerrar menú al hacer click en un enlace
+      document.querySelectorAll(".nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          hamburger.classList.remove("active");
+        });
+      });
+
+      // Cerrar menú al hacer click fuera
+      document.addEventListener("click", (e) => {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+          nav.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
